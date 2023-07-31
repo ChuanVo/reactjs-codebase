@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import WorldClock from './components/world-clock/world-clock'
-import GameCaro from './components/game-caro';
 import MoneyConverter from './components/money-converter';
+import WorldClock from './components/world-clock/world-clock';
+import Game from './components/caro';
 
 function App() {
 
@@ -10,12 +10,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <WorldClock cityName={'Ha Noi'} offset={7}/>
-        <WorldClock cityName={'Hong kong'} offset={8}/>
+        <WorldClock cityName={'Hong kong' offset={8}/>
+        <WorldClock cityName={'Bombay'} offset={5.5}/> */}
+        {/* <WorldClock cityName={'Hong kong'} offset={8}/>
         <WorldClock cityName={'Bombay'} offset={5.5}/>
         <WorldClock cityName={'New York'} offset={-4}/> */}
 
-        {/* <GameCaro /> */}
-        <MoneyConverter />
+        {/* <MoneyConverter /> */}
+
+        {/* <WorldClock cityName={'Ha Noi'} offset={7} /> */}
+
+        <Game />
       </header>
     </div>
   );

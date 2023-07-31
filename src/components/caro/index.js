@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from "react";
 import './style.css'
+import Square from "./square"
+import Board from "./board"
 
 function calculateWinner(squares) {
   const lines = [
@@ -21,46 +23,8 @@ function calculateWinner(squares) {
   return null;
 }
 
-function Square(props) {
-  return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
-}
 
-function Board(props) {
-  function renderSquare(index) {
-    return (
-      <Square
-        value={props.squares[index]}
-        onClick={() => props.onClick(index)}
-      />
-    );
-  }
-
-  return (
-    <div>
-      <div className="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
-      </div>
-      <div className="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-      </div>
-      <div className="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
-      </div>
-    </div>
-  );
-}
-
-function GameCaro() {
+function Game (props) {
   const [history, setHistory] = useState([
     {
       squares: Array(9).fill(null)
@@ -135,4 +99,4 @@ function GameCaro() {
   );
 }
 
-export default GameCaro
+export default Game

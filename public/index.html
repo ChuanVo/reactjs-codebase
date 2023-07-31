@@ -40,15 +40,16 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-  <div id="errors" style="
-    background: #c00;
-    color: #fff;
-    display: none;
-    margin: -20px -20px 20px;
-    padding: 20px;
-    white-space: pre-wrap;
-  "></div>
-  <script>
+
+
+    <div id="errors" style="
+      background: #c00;
+      color: #fff;
+      display: none;
+      margin: -20px -20px 20px;
+      white-space: pre-wrap;
+    "></div>
+    <script>
     window.addEventListener('mousedown', function(e) {
       document.body.classList.add('mouse-navigation');
       document.body.classList.remove('kbd-navigation');
@@ -76,6 +77,7 @@
         old.apply(this, arguments);
       }
     })(console.error);
-  </script>
+    </script>
+
   </body>
 </html>

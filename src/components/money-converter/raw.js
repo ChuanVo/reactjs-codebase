@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { Input, Button, Select } from 'antd';
 import './style.css'
@@ -31,6 +29,7 @@ function MoneyConverter() {
             style={{
               width: 200,
             }}
+            options={COUNTRY}
           />
         </div>
       </div>
