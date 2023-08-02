@@ -29,17 +29,18 @@ function App() {
 
   const handleOnChange = (data) => {
     setSelectComponent(data)
-    console.log(data)
   }
 
   function renderComponent() {
-    switch(selectComponent) {
+    switch(Number(selectComponent)) {
       case 1: 
-        return (<WorldClock cityName={'Ha Noi'} offset={7} />)
+        return (<WorldClock cityName={'Ha Noi'} offset={7} />);
       case 2: 
-        return (<Game />)
+        return (<Game />);
       case 3: 
-        return (< MoneyConverter/>)
+        return (< MoneyConverter/>);
+      default:
+        return null;
     }
   }
 
@@ -52,11 +53,10 @@ function App() {
             style={{
               width: 200,
             }}
-            defaultValue={componentOtp.value}
+            defaultValue={'1'}
             options={componentOtp}
             onChange={handleOnChange}
           />
-          
           {renderComponent()}
           
             {/* {selectComponent == '1' && (<WorldClock cityName={'Ha Noi'} offset={7} />)}
