@@ -20,7 +20,7 @@ function App() {
 
         {/* <WorldClock cityName={'Ha Noi'} offset={7} /> */}
 
-        <Game />
+        <MoneyConverter />
       </header>
     </div>
   );
