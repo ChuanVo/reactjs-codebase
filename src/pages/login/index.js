@@ -13,12 +13,14 @@ const Login = () => {
     const {username, password} = values
 
     if (username === 'admin' && password === 'admin') {
-      navigate('/')
+      localStorage.setItem('isLogin', true);
+      navigate('/dashboard')
     }
   };
 
   return (
     <div
+      className="login"
       style={{
         display: "flex",
         justifyContent: "center",

@@ -1,17 +1,36 @@
-import React, { useState } from 'react';
-import {Routes, Route, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import {Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Login from '../login';
 import {
   UserOutlined,
   InfoCircleOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
+import Gallery from '../gallery';
+import {GALLERY_DATA} from '../../data/default-data'
+
 const { Sider, Content } = Layout;
+
+
+
 const Dashboard = () => {
+  const navigate = useNavigate()
   const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(function() {
+    const isLogin = localStorage.getItem("isLogin")
+    console.log('isLogin: ', isLogin)
+
+    if (isLogin !== 'true') {
+      navigate('/login')
+    }
+  })
+
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -23,28 +42,24 @@ const Dashboard = () => {
           items={[
             {
               key: '1',
-              icon: <InfoCircleOutlined />,
+              icon: <Link to={'/dashboard/profile'}><InfoCircleOutlined /> </Link> ,
               label: 'Profile',
             },
             {
               key: '2',
-              icon:  <Link to={'/login'}><UserOutlined /></Link>,
+              icon:  <Link to={'/dashboard/gallery'}><UserOutlined /></Link>,
               label: 'Gallery',
             }
           ]}
         />
       </Sider>
-      <Layout>
-        <Content
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: '100vh',
-            background: colorBgContainer,
-          }}
-        >
-          Content
-        </Content>
+      <Layout>   
+        <Routes>        
+          <Route path='gallery' element={<Gallery data={GALLERY_DATA}/>} />
+          <Route path='profile' element={<>profile</>} />
+        </Routes>
+
+
       </Layout>
     </Layout>
   );
