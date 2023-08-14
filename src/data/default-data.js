@@ -35,3 +35,26 @@ export const GALLERY_DATA = [{
 	name: "Bridge",
 	image: "https://images.unsplash.com/photo-1445723356089-6dbb51d9c4f8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=980&h=980&fit=crop&s=6e476c6e7ce1adac161295616d1bec05"
 }];
+
+export const VIDEO_SOURCES = [
+	{
+	  key: 'deer',
+	  name: 'Con Nai',
+	  src: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4'
+	},
+	{
+	  key: 'snail',
+	  name: 'Ốc Sên',
+	  src: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4'
+	},
+	{
+	  key: 'cat',
+	  name: 'Con Mèo',
+	  src: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4'
+	},
+	{
+	  key: 'spider',
+	  name: 'Con Nhện',
+	  src: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-eek.mp4'
+	}
+  ]

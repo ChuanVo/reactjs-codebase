@@ -7,11 +7,11 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
 import Gallery from '../gallery';
+import BMICalculator from '../BMI';
+import VideoPlayer from '../video-player'
 import {GALLERY_DATA} from '../../data/default-data'
 
 const { Sider, Content } = Layout;
-
-
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -32,13 +32,12 @@ const Dashboard = () => {
   } = theme.useToken();
   
   return (
-    <Layout>
+    <Layout style={{height: '100vh'}}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
           items={[
             {
               key: '1',
@@ -49,6 +48,16 @@ const Dashboard = () => {
               key: '2',
               icon:  <Link to={'/dashboard/gallery'}><UserOutlined /></Link>,
               label: 'Gallery',
+            },
+            {
+              key: '3',
+              icon:  <Link to={'/dashboard/bmi'}><UserOutlined /></Link>,
+              label: 'BMI Calculator',
+            },
+            {
+              key: '4',
+              icon:  <Link to={'/dashboard/video-player'}><UserOutlined /></Link>,
+              label: 'Video player',
             }
           ]}
         />
@@ -57,6 +66,8 @@ const Dashboard = () => {
         <Routes>        
           <Route path='gallery' element={<Gallery data={GALLERY_DATA}/>} />
           <Route path='profile' element={<>profile</>} />
+          <Route path='bmi' element={<BMICalculator />} />
+          <Route path='video-player' element={<VideoPlayer />} />
         </Routes>
 
 
